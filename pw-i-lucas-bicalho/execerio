@@ -1,0 +1,12 @@
+1 - Crie uma função que receba 2 valores inteiros como argumentos e retorne a sua soma. Se o valor da
+soma for negativo o método deverá retornar o valor 0.
+
+2 - Crie uma função ContaPrimos() que receba dois valores inteiros como argumentos e retorne o número
+de números primos entre estes dois números, inclusive. 
+P. Ex. ContaPrimos(3,10) deverá retornar o valor 3 (3, 5, 7).
+
+3 - Crie uma função que receba 2 notas (F1 e F2) de um aluno e retorne as seguintes mensagens dadas as condições:
+	- Nota maior ou igual a 6,00 -> "Aluno Aprovado"
+	- Nota maior ou igual a 4,00 -> "Aluno em Recuperação"
+	- Nota maior ou igual a 0,00 -> "Aluno Reprovado"
+	Calcule a nota utilizando a seguinte lógica: (F1 + F2) / 2
