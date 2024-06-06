@@ -1,0 +1,49 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #5A227E;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1A2C42;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav a {
+    color: #FFD700;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+caption {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #2A3B57;
+}
+
+td {
+    background-color: #3A4B67;
+}
+
+td:nth-child(1), th:nth-child(1) {
+    color: #FF4500; /* Cor do domingo */
+}
