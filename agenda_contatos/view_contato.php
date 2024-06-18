@@ -12,6 +12,7 @@ $contato = $stmt->fetch(PDO::FETCH_ASSOC);
 
 ?>
 
+
 <div class="profile">
     <img src="images/contato.jpg" alt="Foto do contato" width="100">
     <div class="profile-details">

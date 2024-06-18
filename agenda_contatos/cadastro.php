@@ -3,33 +3,25 @@ include 'config/database.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST['nome'];
-    $numero = $_POST['numero'];
+    $telefone = $_POST['telefone'];
     $profissao = $_POST['profissao'];
     $email = $_POST['email'];
     $rua = $_POST['rua'];
-    $numero_rua = $_POST['numero_rua'];
+    $numero = $_POST['numero'];
+    $cidade = $_POST['cidade'];
+    $estado = $_POST['estado'];
 
-    // Verifica se todos os campos estão preenchidos
-    if (empty($nome) || empty($numero) || empty($profissao) || empty($email) || empty($rua) || empty($numero_rua)) {
+    if (empty($nome) || empty($telefone) || empty($profissao) || empty($email) || empty($rua) || empty($numero) || empty($cidade) || empty($estado)) {
         echo "Por favor, preencha todos os campos.";
     } else {
-        // Cria a consulta SQL
-        $sql = "INSERT INTO contatos (nome, numero, profissao, email, rua, numero_rua) VALUES (:nome, :numero, :profissao, :email, :rua, :numero_rua)";
-        
+        $sql = "INSERT INTO contatos (nome, telefone, profissao, email, rua, numero, cidade, estado) 
+                VALUES ('$nome', '$telefone', '$profissao', '$email', '$rua', '$numero', '$cidade', '$estado')";
+
         try {
-            $stmt = $pdo->prepare($sql);
-
-            // Vincula os parâmetros
-            $stmt->bindParam(':nome', $nome);
-            $stmt->bindParam(':numero', $numero);
-            $stmt->bindParam(':profissao', $profissao);
-            $stmt->bindParam(':email', $email);
-            $stmt->bindParam(':rua', $rua);
-            $stmt->bindParam(':numero_rua', $numero_rua);
-
-            // Executa a consulta
-            if ($stmt->execute()) {
-                echo "Contato cadastrado com sucesso.";
+            if ($pdo->exec($sql)) {
+                // Redireciona para list_contatos.php após o cadastro bem-sucedido
+                header("Location: list_contatos.php");
+                exit();
             } else {
                 echo "Erro ao cadastrar o contato.";
             }

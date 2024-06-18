@@ -31,5 +31,6 @@ $contatos = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <button type="button">
     <a href="add_contato.php?id=<?php echo $contato['id']; ?>">Adicionar</a>
     </button>
+    
 
 
