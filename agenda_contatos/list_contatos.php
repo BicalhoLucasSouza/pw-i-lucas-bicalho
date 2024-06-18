@@ -22,8 +22,14 @@ $contatos = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <td>
                 <a href="view_contato.php?id=<?php echo $contato['id']; ?>">Ver mais</a>
             </td>
+            
         </tr>
     <?php endforeach; ?>
 </table>
 
-<?php include 'includes/footer.php'; ?>
+
+    <button type="button">
+    <a href="add_contato.php?id=<?php echo $contato['id']; ?>">Adicionar</a>
+    </button>
+
+

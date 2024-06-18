@@ -10,7 +10,7 @@
 <body>
     <header>
         <nav>
-            <a href="index.php">Perfil</a>
+            
             <a href="calendario.php">Calendário</a>
             <a href="list_contatos.php">Contatos</a>
         </nav>

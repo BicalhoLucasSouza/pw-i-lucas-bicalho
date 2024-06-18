@@ -1,1 +1,102 @@
-"nao vai ter porra nenhum"
+<?php include 'includes/header.php'; ?>
+
+<h1>Bem-vindo à Polen Planer</h1>
+
+<?php
+
+$db = new mysqli('localhost', 'root', '', 'contatos');
+
+// Funções para CRUD
+function getNomes() {
+    global $db;
+    $sql = "SELECT * FROM nome";
+    $resultado = $db->query($sql);
+    $nomes = [];
+
+    while ($row = $resultado->fetch_assoc()) {
+        $nomes = $row;
+    }
+
+    return $nomes;
+}
+
+function adicionarNome($nome) {
+    global $db;
+
+    $sql = "INSERT INTO nomes (nome) VALUES ('$nome')";
+    $db->query($sql);
+}
+
+function editarNome($id, $nome) {
+    global $db;
+
+    $sql = "UPDATE nomes SET nome = '$nome' WHERE id = $id";
+    $db->query($sql);
+}
+
+function excluirNome($id) {
+    global $db;
+
+    $sql = "DELETE FROM nomes WHERE id = $id";
+    $db->query($sql);
+}
+
+// Ações do CRUD
+$acao = isset($_GET['acao']) ? $_GET['acao'] : null;
+$id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+$nome = isset($_POST['nome']) ? $_POST['nome'] : '';
+
+if ($acao === 'adicionar') {
+    adicionarNome($nome);
+    header('Location> crud.php');
+    exit();
+} elseif ($acao === 'editar') {
+    $id = intval($_GET['id']);
+    $nomeOriginal = $_GET['nome'];
+    $nome = $_POST['nome'];
+    editarNome($id, $nome);
+    header('Location: editar.php?id=' . $id . 'nome=' . $nomeOriginal); // Redirecionar para editar.php com ID
+    exit();
+} elseif ($acao === 'excluir') {
+    excluirNome($id);
+    header('Location: crud.php');
+    exit();
+}
+
+// Obter todos os nomes
+$nomes = getNomes();
+?>
+
+<h1>Lista de Nomes</h1>
+<form method="post" action="?acao=adicionar">
+<label for="nome">Nome: </label>
+<input type="text" id="nome" name="nome" required="required">
+<button type="submit">Adicionar</button>
+</form>
+<table border="border">
+<tr>
+    <th>ID</th>
+    <td>Nome</td>
+    <td>Ações</td>
+</tr>
+<?php foreach ($nomes as $nome): ?>
+<tr>
+    <td><?php echo $nome['id']; ?></td>
+    <td><?php echo $nome['nome']; ?></td>
+    <td>
+        <a
+            href="?acao=editar
+            &id=<?php echo $nome['id']; ?>
+            &nome=<?php echo urlencode($nome['nome']); ?>"">
+            Editar
+        </a>
+        <a href="?acao=exluir&id=<?php echo $nome['id']; ?>">
+            Excluir
+        </a>
+    </td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php $db->close(); ?>
+
+<?php include 'includes/footer.php'; ?>

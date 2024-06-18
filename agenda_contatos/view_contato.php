@@ -10,11 +10,6 @@ $stmt = $pdo->prepare("SELECT * FROM contatos WHERE id = :id");
 $stmt->execute(['id' => $id]);
 $contato = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if (!$contato) {
-    echo "<p>Contato não encontrado.</p>";
-    include 'includes/footer.php';
-    exit;
-}
 ?>
 
 <div class="profile">
@@ -29,7 +24,13 @@ if (!$contato) {
     <input type="text" value="<?php echo htmlspecialchars($contato['telefone']); ?>" readonly>
     <label>Profissão</label>
     <input type="text" value="<?php echo htmlspecialchars($contato['profissao']); ?>" readonly>
+    <label>E-mail</label>
+    <input type="text" value="<?php echo htmlspecialchars($contato['email']); ?>" readonly>
+   
 </div>
+
+<br>
+<br>
 
 <div class="address">
     <label>Rua</label>
