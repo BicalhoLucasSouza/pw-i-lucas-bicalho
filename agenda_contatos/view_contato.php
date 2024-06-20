@@ -10,9 +10,11 @@ $stmt = $pdo->prepare("SELECT * FROM contatos WHERE id = :id");
 $stmt->execute(['id' => $id]);
 $contato = $stmt->fetch(PDO::FETCH_ASSOC);
 
+
 ?>
 
-
+    Wini essa é a parte do  html tem uma pasta CSS/style pode usar ela pra estilização, o header ta fazendo um include dessa pasta em todas paginas, mas nao sei se vai funcionar,
+    então testa se nao for joga direto no html mesmo.
 <div class="profile">
     <img src="images/contato.jpg" alt="Foto do contato" width="100">
     <div class="profile-details">
@@ -44,6 +46,3 @@ $contato = $stmt->fetch(PDO::FETCH_ASSOC);
     <input type="text" value="<?php echo htmlspecialchars($contato['estado']); ?>" readonly>
 </div>
 
-
-
-<?php include 'includes/footer.php'; ?>

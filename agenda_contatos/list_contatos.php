@@ -7,6 +7,8 @@ $stmt = $pdo->query("SELECT id, nome, email FROM contatos");
 $contatos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
+Parte do HTML wini
+
 <h1>Lista de Contatos</h1>
 
 <table border="1">
