@@ -9,12 +9,17 @@ $id = $_GET['id'];
 $stmt = $pdo->prepare("SELECT * FROM contatos WHERE id = :id");
 $stmt->execute(['id' => $id]);
 $contato = $stmt->fetch(PDO::FETCH_ASSOC);
-
-
 ?>
 
-    Wini essa é a parte do  html tem uma pasta CSS/style pode usar ela pra estilização, o header ta fazendo um include dessa pasta em todas paginas, mas nao sei se vai funcionar,
-    então testa se nao for joga direto no html mesmo.
+<html>
+    <head>
+    <link rel="stylesheet" href="css/perfil.css">
+</head>
+<body>
+    <h1>Perfil</h1>
+</body>
+</html>
+
 <div class="profile">
     <img src="images/contato.jpg" alt="Foto do contato" width="100">
     <div class="profile-details">
