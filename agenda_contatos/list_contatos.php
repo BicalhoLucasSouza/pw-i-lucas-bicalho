@@ -7,7 +7,11 @@ $stmt = $pdo->query("SELECT id, nome, email FROM contatos");
 $contatos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-Parte do HTML wini
+<html>
+    <head>
+    <link rel="stylesheet" href="css/list.css"> 
+    </head>
+    <body>
 
 <h1>Lista de Contatos</h1>
 
@@ -17,6 +21,7 @@ Parte do HTML wini
         <th>Email</th>
         <th>Ações</th>
         <th>Editar</th>
+        <th>Excluir</th>
     </tr>
     <?php foreach ($contatos as $contato): ?>
         <tr>
@@ -28,6 +33,9 @@ Parte do HTML wini
             <td>
                 <a href="edit_contato.php?id=<?php echo $contato['id']; ?>">Editar</a>
             </td>
+            <td>
+            <a href="deletar_contato.php?id=<?php echo $contato['id']; ?>" onclick="return confirm('Tem certeza que deseja excluir este contato?');">Excluir</a>
+    </td>
 
             
         </tr>
@@ -39,5 +47,8 @@ Parte do HTML wini
     <a href="add_contato.php?id=<?php echo $contato['id']; ?>">Adicionar</a>
     </button>
     
+
+    </body>
+    </html>
 
 

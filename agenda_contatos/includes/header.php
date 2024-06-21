@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda de Contatos</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/list.css">
     
 </head>
 <body>
     <header>
-        <nav>
-            
-
-            <a href="list_contatos.php">Contatos</a>
-        </nav>
+    <ul>
+        <li class="li1">&emsp;<img src="images/slogan.png" width="40px" height="40px"> Polen Planner <img src="images/slogan.png" width="40px" height="40px"> </li><br><br><br>
+        <li><a class="active" href="list_contatos.php">Contatos</a></li>
+        <li><a href="add_contato.php">Adicionar</a></li>
+    </ul><br><br><br><br><br>
     </header>
     <main>
