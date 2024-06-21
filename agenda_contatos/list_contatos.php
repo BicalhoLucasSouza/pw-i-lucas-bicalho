@@ -12,29 +12,27 @@ $contatos = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="css/list.css"> 
     </head>
     <body>
-
-<h1>Lista de Contatos</h1>
-
-<table border="1">
+<br><br><br>
+<table border="5%"style="width: 50%">
     <tr>
         <th>Nome</th>
         <th>Email</th>
-        <th>Ações</th>
-        <th>Editar</th>
-        <th>Excluir</th>
+        <th></th>
+        <th></th>
+        <th></th>
     </tr>
     <?php foreach ($contatos as $contato): ?>
         <tr>
             <td><?php echo htmlspecialchars($contato['nome']); ?></td>
             <td><?php echo htmlspecialchars($contato['email']); ?></td>
-            <td>
-                <a href="view_contato.php?id=<?php echo $contato['id']; ?>">Ver mais</a>
+            <td class="td1">
+                <a href="view_contato.php?id=<?php echo $contato['id']; ?>"><img src="images/vermais.png" width="20px" height="20px"></a>
             </td>
-            <td>
-                <a href="edit_contato.php?id=<?php echo $contato['id']; ?>">Editar</a>
+            <td class="td1">
+                <a href="edit_contato.php?id=<?php echo $contato['id']; ?>"><img src="images/editar.png" width="20px" height="20px"></a>
             </td>
-            <td>
-            <a href="deletar_contato.php?id=<?php echo $contato['id']; ?>" onclick="return confirm('Tem certeza que deseja excluir este contato?');">Excluir</a>
+            <td class="td1"> 
+            <a href="deletar_contato.php?id=<?php echo $contato['id']; ?>" onclick="return confirm('Tem certeza que deseja excluir este contato?');"><img src="images/deletar.png" width="20px" height="20px"></a>
     </td>
 
             
@@ -42,10 +40,6 @@ $contatos = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <?php endforeach; ?>
 </table>
 
-
-    <button type="button">
-    <a href="add_contato.php?id=<?php echo $contato['id']; ?>">Adicionar</a>
-    </button>
     
 
     </body>
