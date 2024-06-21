@@ -1,7 +1,7 @@
 body {
     background-image: url(../images/fundo.jpg) ;
-    background-size: 100% 200%;
-    background-repeat: no-repeat;
+    background-size: 100%;
+
   }
 
   table {border: 1px solid rgb(0, 0, 0);
@@ -44,7 +44,6 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: #333535;
-    position: fixed;
     width: 100%;
   }
   
@@ -58,7 +57,7 @@ ul {
     font-size: 200%;
   }
   li a {
-    display: block;
+    display: flex;
     color: white;
     text-align: center;
     padding: 14px 16px;

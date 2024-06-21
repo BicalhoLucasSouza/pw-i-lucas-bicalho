@@ -1,7 +1,6 @@
 body {
     background-image: url(../images/fundo.jpg) ;
-    background-size: 100% 110%;
-    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 .label1 {
@@ -18,7 +17,7 @@ body {
     border-radius: 10px 10px 10px 10px;
 }
 
-.fieldset{
+#id{
     background-color: #79643253;
     border: 2px solid #000000;
     margin-top: 8%;
