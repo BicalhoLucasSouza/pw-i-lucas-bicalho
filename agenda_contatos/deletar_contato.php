@@ -12,7 +12,7 @@ if (isset($_GET['id'])) {
         $stmt->execute([':id' => $id]);
 
         // Redireciona para a página de listagem de contatos após a exclusão
-        header("Location: list_contatos.php");
+        header("Location: index.php");
         exit();
     } catch (PDOException $e) {
         echo "Erro: " . $e->getMessage();

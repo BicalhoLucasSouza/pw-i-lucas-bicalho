@@ -10,7 +10,7 @@
     <body>
         <ul>
             <li class="li1">&emsp;<img src="images/slogan.png" width="40px" height="40px"> Polen Planner <img src="images/slogan.png" width="40px" height="40px"> </li><br><br><br>
-            <li><a class="active" href="list_contatos.php">Contatos</a></li>
+            <li><a class="active" href="index.php">Contatos</a></li>
             <li><a href="add_contato.php">Adicionar</a></li>
         </ul><br><br><br><br><br>
     </body>

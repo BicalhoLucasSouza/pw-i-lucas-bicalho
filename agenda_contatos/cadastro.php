@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         try {
             if ($pdo->exec($sql)) {
                 // Redireciona para list_contatos.php após o cadastro bem-sucedido
-                header("Location: list_contatos.php");
+                header("Location: index.php");
                 exit();
             } else {
                 echo "Erro ao cadastrar o contato.";
